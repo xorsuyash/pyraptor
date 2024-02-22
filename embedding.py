@@ -1,8 +1,13 @@
-class BertEmbedding:
+from sentence_transformers import SentenceTransformer   
 
-    def __init__():
-        pass 
-    async def encode():
-        pass 
-    async def decode():
-        pass 
+model=SentenceTransformer("all_MiniLM-L6-v2")
+
+def embedding(chunks):
+
+    embedding=model.encode(chunks)
+    return embedding 
+
+if __name__=="__main__":
+    from chunking import TextChunker
+    chunks=TextChunker()
+    chunks.chunks()
